@@ -1,16 +1,20 @@
-all: main
+main: main.o carta.o deck.o paciencia.o pilha.o
+	g++ -o main main.o carta.o deck.o paciencia.o pilha.o
 
-CXX = clang++
-override CXXFLAGS += -g -Wno-everything
+main.o: main.cpp paciencia.hpp
+	g++ -c -o main.o main.cpp
 
-SRCS = $(shell find . -name '.ccls-cache' -type d -prune -o -type f -name '*.cpp' -print | sed -e 's/ /\\ /g')
-HEADERS = $(shell find . -name '.ccls-cache' -type d -prune -o -type f -name '*.h' -print)
+carta.o: carta.cpp carta.hpp
+	g++ -c -o carta.o carta.cpp
 
-main: $(SRCS) $(HEADERS)
-	$(CXX) $(CXXFLAGS) $(SRCS) -o "$@"
+deck.o: deck.cpp deck.hpp
+	g++ -c -o deck.o deck.cpp
 
-main-debug: $(SRCS) $(HEADERS)
-	$(CXX) $(CXXFLAGS) -O0 $(SRCS) -o "$@"
+paciencia.o: paciencia.cpp paciencia.hpp
+	g++ -c -o paciencia.o paciencia.cpp
 
-clean:
-	rm -f main main-debug
+pilha.o: pilha.cpp pilha.hpp
+	g++ -c -o pilha.o pilha.cpp
+
+clean: 
+	rm -f main *.o
