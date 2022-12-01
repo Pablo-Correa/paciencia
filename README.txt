@@ -12,8 +12,8 @@ Yanne Assis Alves - 2022037566
 
 Requisitos:
 Embaralhar cartas (Iniciar jogo);
-Reiniciar jogo;
-Comprar uma carta;
+Recomeçar jogo;
+Comprar cartas;
 Mover uma carta 
 Passar apenas as cartas corretas do tableau à pilha final;
 O usário saber se ganhou ou perdeu o jogo.
@@ -26,6 +26,3 @@ Como usuário normal, eu gostaria de passar uma carta do meu tableau para minha 
 Como usuário normal, eu gostaria de saber se e possivel realizar o movimento que desejo;
 Como usuário normal, eu gostaria de saber se ganhei ou perdi o jogo para entender como foi minha performance.
 
-
-
-// Podemos adicionar outras funcionalidades como numero de movientos realizados ou tempo gasto, mas acho que nao seja tao necessario, o que vcs acham?
